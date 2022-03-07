@@ -38,7 +38,7 @@ Note: These requirements only apply if using you're using lovesay.js to print a 
 
 ### ❖ Usage 
 
-> a full example implementation can be found in `index.html`
+> a full example implementation can be found in `example.html`
 
 lovesay.js can be used in a similar fashion to cowsay, however it differs by returning a formatted HTML object that must be written to the document body to be viewed.
 

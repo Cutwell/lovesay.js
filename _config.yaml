@@ -1,0 +1,5 @@
+remote_theme: rosario/kasper
+plugins:
+  - jekyll-feed
+title: Lovesay.js
+description: cowsay, but full of love ♡ 
