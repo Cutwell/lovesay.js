@@ -95,9 +95,6 @@ function lovesay(quote, theme='catppuccin') {
     `<p><span ${heartFiveStyle}>      ${heart}    ${heart}          </span>${quoteList[3]}</p>` +
     `<p><span ${heartSixStyle}>         ${heart}            </span>${quoteList[4]}</p>`;
 
-    // for gif generation, set background to colorscheme
-    //document.body.style.backgroundColor = colorscheme['colorOne'];
-
     // return text as HTML for viewport
     return div;
 }

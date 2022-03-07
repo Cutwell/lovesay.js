@@ -6,29 +6,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lovesay.js</title>
 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono">
+
     <style>
-        body {
-            position: relative;
+        :global(body) {
+            font-family: 'Roboto Mono', monospace;
+            overflow: hidden;
         }
-        div {
+        #center {
+            margin: 0;
             position: absolute;
             top: 50%;
             left: 50%;
-            margin: -25px 0 0 -25px;
+            transform: translate(-50%, -50%);
         }
     </style>
 </head>
 <body>
+    <div id="center">
+
+    </div>
+
     <script src="lovesay/lovesay.js"></script>
     <script>
+        var lovesayColorsKeys;
+        var lovesayColorsCycle = 0;
+
         document.body.onload = function() {
             lovesayFetch(
                 quotes_url=".config/lovesay/quotes.json", 
                 colors_url="lovesay/colors.json"
             )
             .then(function (data) {
-                let love = lovesay('', theme='catppuccin');
-                document.write(love.outerHTML);
+                lovesayColorsKeys = Object.keys(lovesayColors);
+
+                setInterval(() => {
+                    // get random theme and lovesay
+                    let theme = lovesayColorsKeys[lovesayColorsCycle];
+
+                    if (lovesayColorsCycle < lovesayColorsKeys.length-1) {
+                        lovesayColorsCycle++;
+                    }
+                    else {
+                        lovesayColorsCycle = 0;
+                    }
+
+                    let colorscheme = lovesayColors[theme];
+                    let love = lovesay('', theme=theme);
+
+                    // love div uses monospace font by default, so lets override that to something more appealing
+                    // (but still monospace, to retain text formatting)
+                    love.style.fontFamily = 'Roboto Mono';
+
+                    // write lovesay, and update background to match theme
+                    let container = document.getElementById('center');
+                    container.innerHTML = '';
+                    container.appendChild(love);
+                    document.body.style.backgroundColor = colorscheme['colorTwo'];
+                }, 1000);
+                
             })
             .catch(function (err) {
                 console.log('error: ' + err);
