@@ -20,7 +20,7 @@ async function lovesayFetch(quotes_url, colors_url) {
                 return response.json();
             })
             .then(function (data) {
-                lovesayQuotes = data;
+                lovesayQuotes = data["quotes"];
             })
             .catch(function (err) {
                 console.log('error: ' + err);
