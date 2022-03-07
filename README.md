@@ -20,7 +20,7 @@
 
 ### ❖ Information 
 
-  lovesay.js is a javascript port of [lovesay](https://github.com/ZenithDS/lovesay) that displays a quote from a loved one based on the day of the month or a quote passed in via arguments. 
+  lovesay.js is a javascript port of [lovesay](https://github.com/ZenithDS/lovesay) that displays a quote from a loved one or a quote passed in via arguments. 
 
   <img src="assets/lovesay.gif" alt="lovesay.js gif">
 
