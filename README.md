@@ -31,7 +31,7 @@
 Note: These requirements only apply if using you're using lovesay.js to print a different quote for each day of the month.  
 
 - A JSON quotes file.
-- Each quote must be a new JSON list item, see the example quotes file in `.config/lovesay/quotes`.
+- Each quote must be a new JSON list item, see the example quotes file in `config/lovesay/quotes`.
 - (optional) A partner to write you 31 lines full of love, one for each day of the month.
 
 ---
@@ -51,7 +51,7 @@ if there is a quotes file loaded, lovesay.js can be used without any arguments.
 
 ```javascript
 lovesayFetch(
-   quotes_url=".config/lovesay/quotes.json", 
+   quotes_url="config/lovesay/quotes.json", 
 )
 .then(function (data) {
    let love = lovesay('') // selects a random quote from the quotes file
@@ -92,7 +92,7 @@ Quotes and theme JSON files can be loaded simultaneously.
 For example:
 ```javascript
 lovesayFetch(
-   quotes_url=".config/lovesay/quotes.json", 
+   quotes_url="config/lovesay/quotes.json", 
    colors_url="lovesay/colors.json"
 )
 .then(function (data) {
