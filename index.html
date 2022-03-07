@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lovesay.js</title>
+
+    <style>
+        body {
+            position: relative;
+        }
+        div {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin: -25px 0 0 -25px;
+        }
+    </style>
+</head>
+<body>
+    <script src="lovesay/lovesay.js"></script>
+    <script>
+        document.body.onload = function() {
+            lovesayFetch(
+                quotes_url=".config/lovesay/quotes.json", 
+                colors_url="lovesay/colors.json"
+            )
+            .then(function (data) {
+                let love = lovesay('', theme='catppuccin');
+                document.write(love.outerHTML);
+            })
+            .catch(function (err) {
+                console.log('error: ' + err);
+            });
+        }
+    </script>
+</body>
+</html>
