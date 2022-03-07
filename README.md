@@ -79,7 +79,7 @@ lovesayFetch(
    colors_url="lovesay/colors.json"
 )
 .then(function (data) {
-   let love = lovesay("example", theme="nord') // uses nord 
+   let love = lovesay("example", theme="nord") // uses nord 
    document.write(love.outerHTML);
 })
 .catch(function (err) {
