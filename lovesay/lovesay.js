@@ -81,7 +81,7 @@ function lovesay(quote, theme='catppuccin') {
     let heartFiveStyle = `style='color: transparent; text-shadow: 0 0 0 ${colorscheme['colorFive']}';`
     let heartSixStyle = `style='color: transparent; text-shadow: 0 0 0 ${colorscheme['colorSix']}';`
 
-    let quoteStyle = `style='font-family: initial; color: ${colorscheme['fg']}';`
+    let quoteStyle = `style='color: ${colorscheme['fg']}';`
 
     let quoteList = format_quote(quote, heartOneStyle, quoteStyle);
 

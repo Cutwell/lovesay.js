@@ -6,14 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lovesay.js</title>
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono">
-
     <link rel="icon" type="image/png" href="assets/favicon.png">
 
     <style>
-        :global(body) {
+        @font-face {
+            font-family: 'Roboto Mono';
+            src: url('assets/Roboto_Mono/static/RobotoMono-Regular.ttf');
+        }
+
+        body {
             font-family: 'Roboto Mono', monospace;
             overflow: hidden;
+            font-size: 0.8em;
         }
         #center {
             margin: 0;
